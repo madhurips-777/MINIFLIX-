@@ -9,7 +9,9 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         // Simulate login
+        localStorage.setItem('miniflix_user', JSON.stringify({ email }));
         navigate('/');
+        window.location.reload(); // Force reload to trigger App.jsx check
     };
 
     return (

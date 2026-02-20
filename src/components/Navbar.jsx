@@ -37,11 +37,22 @@ const Navbar = () => {
                 <div className="flex items-center gap-6 text-white">
                     <Search className="size-5 cursor-pointer hover:text-gray-300" />
                     <Bell className="size-5 cursor-pointer hover:text-gray-300" />
-                    <div
-                        className="size-8 bg-[#E50914] rounded flex items-center justify-center cursor-pointer overflow-hidden border border-white/20"
-                        onClick={() => navigate('/login')}
-                    >
-                        <User className="size-5" />
+                    <div className="group relative">
+                        <div className="size-8 bg-[#E50914] rounded flex items-center justify-center cursor-pointer overflow-hidden border border-white/20">
+                            <User className="size-5" />
+                        </div>
+                        <div className="absolute right-0 top-full mt-2 w-32 bg-black/90 border border-gray-700 hidden group-hover:block rounded-sm py-2 text-xs">
+                            <p
+                                className="px-4 py-2 hover:bg-gray-800 cursor-pointer"
+                                onClick={() => {
+                                    localStorage.removeItem('miniflix_user');
+                                    navigate('/login');
+                                    window.location.reload();
+                                }}
+                            >
+                                Sign Out
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
