@@ -63,7 +63,7 @@ const Login = () => {
                 </div>
 
                 <div className="mt-16 text-gray-500">
-                    <p>New to MINIFLIX? <span className="text-white hover:underline cursor-pointer" onClick={() => navigate('/login')}>Sign up now.</span></p>
+                    <p>New to MINIFLIX? <span className="text-white hover:underline cursor-pointer" onClick={() => navigate('/signup')}>Sign up now.</span></p>
                     <p className="text-xs mt-4">This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className="text-blue-500 hover:underline cursor-pointer">Learn more.</span></p>
                 </div>
             </div>
