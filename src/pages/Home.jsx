@@ -1,4 +1,3 @@
-```javascript
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import MovieRow from '../components/MovieRow';
@@ -31,7 +30,7 @@ const Home = () => {
             {/* Hero Section */}
             <div className="relative h-[80vh] md:h-[95vh] w-full">
                 <div className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
-                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop')` }}>
+                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop')" }}>
                     <div className="hero-overlay absolute inset-0 bg-black/40" />
                 </div>
 
@@ -40,9 +39,9 @@ const Home = () => {
                         {activeCategory === 'TV Shows' ? 'MUST WATCH TV' : activeCategory === 'Movies' ? 'POPCORN PICKS' : 'THE VIBE CODE'}
                     </h2>
                     <p className="text-lg md:text-xl text-gray-200 font-medium line-clamp-3">
-                        {activeCategory === 'TV Shows' 
-                            ? "From mind-bending sci-fi to gripping dramas, discover the series that everyone is talking about." 
-                            : activeCategory === 'Movies' 
+                        {activeCategory === 'TV Shows'
+                            ? "From mind-bending sci-fi to gripping dramas, discover the series that everyone is talking about."
+                            : activeCategory === 'Movies'
                                 ? "Experience cinematic masterpieces that push the boundaries of storytelling and visual effects."
                                 : "In a world of logic, one programmer breaks all the rules. Experience the most thrilling coding adventure of the year."
                         }
