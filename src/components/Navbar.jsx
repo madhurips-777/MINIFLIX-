@@ -27,10 +27,10 @@ const Navbar = () => {
 
                     <ul className="hidden md:flex gap-4 text-sm font-medium text-gray-200">
                         <li className="hover:text-white cursor-pointer transition-colors text-white" onClick={() => navigate('/')}>Home</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">TV Shows</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">Movies</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">New \u0026 Popular</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">My List</li>
+                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>TV Shows</li>
+                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>Movies</li>
+                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>New & Popular</li>
+                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>My List</li>
                     </ul>
                 </div>
 
