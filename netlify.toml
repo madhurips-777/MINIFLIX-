@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:5000/api/:splat" # Default to localhost, but this can be changed in settings
+  status = 200
