@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Bell, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ activeCategory, setActiveCategory }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const navigate = useNavigate();
 
@@ -19,18 +19,51 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleCategoryClick = (category) => {
+        if (setActiveCategory) {
+            setActiveCategory(category);
+        } else {
+            navigate('/');
+        }
+    };
+
     return (
         <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-[#141414]' : 'nav-gradient'}`}>
             <div className="px-4 md:px-12 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-8">
-                    <h1 className="text-[#E50914] text-2xl md:text-3xl font-black tracking-tighter cursor-pointer" onClick={() => navigate('/')}>MINIFLIX</h1>
+                    <h1 className="text-[#E50914] text-2xl md:text-3xl font-black tracking-tighter cursor-pointer" onClick={() => handleCategoryClick('Home')}>MINIFLIX</h1>
 
                     <ul className="hidden md:flex gap-4 text-sm font-medium text-gray-200">
-                        <li className="hover:text-white cursor-pointer transition-colors text-white" onClick={() => navigate('/')}>Home</li>
-                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>TV Shows</li>
-                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>Movies</li>
-                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>New & Popular</li>
-                        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>My List</li>
+                        <li
+                            className={`hover:text-white cursor-pointer transition-colors ${activeCategory === 'Home' ? 'text-white font-bold underline underline-offset-8 decoration-[#E50914] decoration-2' : ''}`}
+                            onClick={() => handleCategoryClick('Home')}
+                        >
+                            Home
+                        </li>
+                        <li
+                            className={`hover:text-white cursor-pointer transition-colors ${activeCategory === 'TV Shows' ? 'text-white font-bold underline underline-offset-8 decoration-[#E50914] decoration-2' : ''}`}
+                            onClick={() => handleCategoryClick('TV Shows')}
+                        >
+                            TV Shows
+                        </li>
+                        <li
+                            className={`hover:text-white cursor-pointer transition-colors ${activeCategory === 'Movies' ? 'text-white font-bold underline underline-offset-8 decoration-[#E50914] decoration-2' : ''}`}
+                            onClick={() => handleCategoryClick('Movies')}
+                        >
+                            Movies
+                        </li>
+                        <li
+                            className={`hover:text-white cursor-pointer transition-colors ${activeCategory === 'New & Popular' ? 'text-white font-bold underline underline-offset-8 decoration-[#E50914] decoration-2' : ''}`}
+                            onClick={() => handleCategoryClick('New & Popular')}
+                        >
+                            New & Popular
+                        </li>
+                        <li
+                            className={`hover:text-white cursor-pointer transition-colors ${activeCategory === 'My List' ? 'text-white font-bold underline underline-offset-8 decoration-[#E50914] decoration-2' : ''}`}
+                            onClick={() => handleCategoryClick('My List')}
+                        >
+                            My List
+                        </li>
                     </ul>
                 </div>
 
